@@ -7,20 +7,22 @@ const rules = {
   spock: ["scissors", "rock"],
 }
 
-function choisesConsole(arr){
+function choisesConsole(arr) {
   const choiseAleatoria = Math.floor(Math.random() * arr.length)
   return arr[choiseAleatoria]
 }
- console.log(choisesConsole(choises));
- 
-function jugar(choises){
 
+
+function jugar(userChoises){
+  const respuestaConsole = choisesConsole(choises)
+  console.log("Jugador 1:", userChoises);
+  console.log("Jugador Console:", respuestaConsole);
+  
+  if (userChoises === respuestaConsole)
 }
 
-
 jugar("Rock")
-jugar("Paper")
-jugar("scissors")
+
 
 
 
