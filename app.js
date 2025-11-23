@@ -12,16 +12,31 @@ function choisesConsole(arr) {
   return arr[choiseAleatoria]
 }
 
-
-function jugar(userChoises){
-  const respuestaConsole = choisesConsole(choises)
-  console.log("Jugador 1:", userChoises);
-  console.log("Jugador Console:", respuestaConsole);
-  
-  if (userChoises === respuestaConsole)
+const ganaUsuario = (opciones, eleccionConsole) => {
+  for (const opcion of opciones) {
+    if (opcion === eleccionConsole) {
+      return true
+    }
+    return false
+  }
 }
 
-jugar("Rock")
+function jugar(userChoises) {
+  const respuestaConsole = choisesConsole(choises)
+  console.log("Usuario escogió :", userChoises);
+  console.log("Console escogió:", respuestaConsole);
+
+  if (userChoises === respuestaConsole) {
+    console.log("Empate");
+  } else if (ganaUsuario(rules[userChoises], respuestaConsole)) {
+    console.log("Your winner =)");
+  } else {
+    console.log("You lost =/");
+  }
+}
+
+jugar("rock")
+
 
 
 
