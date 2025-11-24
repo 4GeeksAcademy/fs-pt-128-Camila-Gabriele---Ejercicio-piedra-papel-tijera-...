@@ -17,8 +17,8 @@ const ganaUsuario = (opciones, eleccionConsole) => {
     if (opcion === eleccionConsole) {
       return true
     }
-    return false
   }
+  return false
 }
 
 function jugar(userChoises) {
