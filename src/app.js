@@ -7,29 +7,26 @@ const rules = {
   spock: ["scissors", "rock"],
 }
 
-function choisesConsole(arr) {
-  const choiseAleatoria = Math.floor(Math.random() * arr.length)
-  return arr[choiseAleatoria]
+function choisesConsole(choise) {
+  const choiseAleatoria = Math.floor(Math.random() * choise.length)
+  return choise[choiseAleatoria]
 }
 
-const ganaUsuario = (opciones, eleccionConsole) => {
+function ganaUsuario(opciones, eleccionConsole) {
   for (const opcion of opciones) {
-    if (opcion === eleccionConsole) {
-      return true
-    }
+    if (opcion === eleccionConsole) return true;
+    return false;
   }
-  return false
 }
-
 function jugar(userChoises) {
-  const respuestaConsole = choisesConsole(choises)
+  const respuestaCompu = choisesConsole(choises)
   console.log("Usuario escogió :", userChoises);
-  console.log("Console escogió:", respuestaConsole);
+  console.log("Console escogió:", respuestaCompu);
 
-  if (userChoises === respuestaConsole) {
+  if (userChoises === respuestaCompu) {
     console.log("Empate!!");
-  } else if (ganaUsuario(rules[userChoises], respuestaConsole)) {
-    console.log("Your winner =)");
+  } else if (ganaUsuario(rules[userChoises], respuestaCompu)) {
+    console.log("You won =)");
   } else {
     console.log("You lost =/");
   }
